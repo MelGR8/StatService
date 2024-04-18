@@ -15,14 +15,14 @@ public class StatsService {
         return avgSales;
     }
 
-    public long maxSales(long[] sales) {
-        long maxMonth = 0;
+    public int maxSales(long[] sales) {
+        int maxMonth = 0;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] >= sales[(int) maxMonth]) {
                 maxMonth = i;
             }
         }
-        return maxMonth + 1;
+        return  maxMonth + 1;
     }
 
     public int minSales(long[] sales) {
@@ -38,8 +38,8 @@ public class StatsService {
     }
 
 
-    public long lowerThanAvg(long[] sales) {
-        long lowerThanAvg = 0;
+    public int lowerThanAvg(long[] sales) {
+        int lowerThanAvg = 0;
         long avg = avgSales(sales);
         for (long sale : sales) {
             if (sale < avg) {
@@ -50,8 +50,8 @@ public class StatsService {
         return lowerThanAvg;
     }
 
-    public long higherThanAvg(long[] sales) {
-        long higherThanAvg = 0;
+    public int higherThanAvg(long[] sales) {
+        int higherThanAvg = 0;
         long avg = avgSales(sales);
         for (long sale : sales) {
             if (sale >= avg) {
